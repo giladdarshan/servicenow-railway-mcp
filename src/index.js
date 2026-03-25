@@ -49,7 +49,7 @@ function createServer() {
   return server;
 }
 
-const app = createMcpExpressApp();
+const app = createMcpExpressApp({ host: '0.0.0.0' });
 const port = Number(process.env.PORT || 3000);
 
 app.get('/', (_req, res) => {
@@ -98,6 +98,6 @@ app.delete('/mcp', (_req, res) => {
   res.status(405).set('Allow', 'POST').send('Method Not Allowed');
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`MCP server listening on port ${port}`);
 });
