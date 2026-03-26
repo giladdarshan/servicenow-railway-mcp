@@ -1,13 +1,22 @@
-# Minimal ServiceNow MCP Server
+# ServiceNow Railway MCP With OAuth
 
-Minimal MCP server for Railway and ServiceNow AI Agent Studio.
+Minimal MCP server for Railway with OAuth bearer tokens for ServiceNow.
 
-## Deploy
+## Railway variables
 
-1. Create a Railway project from this folder.
-2. Railway will detect Node automatically.
-3. Deploy with the included `railway.json`.
+Set these in Railway:
 
-## Endpoint
+- `PUBLIC_BASE_URL`
+- `OAUTH_CLIENT_ID`
+- `OAUTH_CLIENT_SECRET`
+- `OAUTH_SCOPE`
+- `OAUTH_TOKEN_TTL_SECONDS`
 
-Use `/mcp` as the MCP URL path.
+Example values are in `.env.example`.
+
+## URLs
+
+- MCP endpoint: `/mcp`
+- Token endpoint: `/oauth/token`
+- OAuth metadata: `/.well-known/oauth-authorization-server`
+- Protected resource metadata: `/.well-known/oauth-protected-resource/mcp`
