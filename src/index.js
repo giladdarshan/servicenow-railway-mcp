@@ -219,8 +219,8 @@ const tokenTtlSeconds = Number(process.env.OAUTH_TOKEN_TTL_SECONDS || 3600);
 if (!baseUrl) {
   throw new Error('PUBLIC_BASE_URL is required');
 }
-
-if (!clientId || !clientSecret || !redirectUri) {
+console.log("OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET, and OAUTH_REDIRECT_URI", OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET, OAUTH_REDIRECT_URI);
+if (!clientId || !clientSecret) {
   throw new Error('OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET, and OAUTH_REDIRECT_URI are required');
 }
 
