@@ -52,7 +52,13 @@ class ServiceNowAuthProvider {
     if (params.state) {
       redirectUrl.searchParams.set('state', params.state);
     }
-
+    console.log(`[authorize] data:`, redirectUrl.href, JSON.stringify(params),  JSON.stringify({
+      clientId: client.client_id,
+      codeChallenge: params.codeChallenge,
+      redirectUri: params.redirectUri,
+      scopes: params.scopes || [],
+      resource: params.resource
+    }));
     res.redirect(302, redirectUrl.href);
   }
 
