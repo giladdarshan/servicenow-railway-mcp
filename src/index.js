@@ -212,7 +212,7 @@ const app = createMcpExpressApp({ host: '0.0.0.0' });
 const baseUrl = process.env.PUBLIC_BASE_URL;
 const clientId = process.env.OAUTH_CLIENT_ID;
 const clientSecret = process.env.OAUTH_CLIENT_SECRET;
-const redirectUri = process.env.OAUTH_REDIRECT_URI;
+const redirectUri = process.env.OAUTH_REDIRECT_URI || "";
 const scope = process.env.OAUTH_SCOPE || 'mcp:tools';
 const tokenTtlSeconds = Number(process.env.OAUTH_TOKEN_TTL_SECONDS || 3600);
 
