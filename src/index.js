@@ -230,7 +230,7 @@ const registeredClient = {
   client_id: clientId,
   client_secret: clientSecret,
   client_name: 'ServiceNow MCP Client',
-  redirect_uris: [redirectUri],
+  redirect_uris: redirectUri.split(","),
   token_endpoint_auth_method: 'client_secret_post',
   grant_types: ['authorization_code', 'refresh_token'],
   response_types: ['code'],
